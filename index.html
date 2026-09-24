@@ -8,11 +8,11 @@
 <title>TurfOps</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
-:root{--bg:#0b1210;--panel:#121c19;--panel2:#182420;--line:#24332e;--text:#e8f0ec;--muted:#8aa297;--accent:#3dcc8a;--accent2:#7ad4ff;--warn:#e8c36a;--bad:#ef7a6a;--ok:#3dcc8a}
-*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,sans-serif}
+:root{--bg:#0b1210;--panel:#121c19;--panel2:#182420;--line:#24332e;--text:#e8f0ec;--muted:#8aa297;--accent:#3dcc8a;--warn:#e8c36a;--bad:#ef7a6a;--ok:#3dcc8a}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,sans-serif}
 #app{height:100%;display:flex;flex-direction:column}header{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line);background:#0e1714}
 .logo{font-weight:750;color:var(--accent)}nav{display:flex;gap:4px;flex-wrap:wrap}
-nav button,.tool,.btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+nav button,.tool,.btn{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
 nav button.active,.tool.active{background:#1d3a2e;border-color:var(--accent);color:var(--accent)}
 .btn.primary{background:#1a4a34;border-color:var(--accent);color:var(--accent)}.btn.danger{color:var(--bad)}
 main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 360px}#map{min-height:280px}
@@ -26,38 +26,22 @@ input,select,textarea{width:100%;background:#0d1613;color:var(--text);border:1px
 table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:6px 4px;border-bottom:1px solid var(--line)}
 .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px}.ok{background:#163528;color:var(--ok)}.hold{background:#3a2e12;color:var(--warn)}.no{background:#3a1b18;color:var(--bad)}.hint{color:var(--muted);font-size:12px}.tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 @media(max-width:860px){main{grid-template-columns:1fr;grid-template-rows:52vh 1fr}aside{border-left:0;border-top:1px solid var(--line)}}
-</style>
-</head>
-<body>
-<div id="app">
-<header><div class="logo">TURFOPS</div>
-<nav>
+</style></head><body>
+<div id="app"><header><div class="logo">TURFOPS</div><nav>
 <button data-view="map" class="active">Map</button>
 <button data-view="weather">Weather</button>
 <button data-view="water">Water</button>
 <button data-view="feed">Fertilizer</button>
 <button data-view="settings">Setup</button>
 </nav></header>
-<div id="view-map" class="view map on"><main><div id="map"></div>
-<aside id="inspector">
-<div class="tools">
-<button class="tool active" data-tool="pan">Pan</button>
-<button class="tool" data-tool="zone">Zone</button>
-<button class="tool" data-tool="valve">Valve</button>
-<button class="tool" data-tool="head">Head</button>
-</div>
-<p class="hint">Tap the map to place. Draw a zone by tapping corners, then Finish zone.</p>
+<div id="view-map" class="view map on"><main><div id="map"></div><aside id="inspector">
+<div class="tools"><button class="tool active" data-tool="pan">Pan</button><button class="tool" data-tool="zone">Zone</button><button class="tool" data-tool="valve">Valve</button><button class="tool" data-tool="head">Head</button></div>
+<p class="hint">Tap map to place. Draw zone corners, then Finish zone.</p>
 <button class="btn" id="finishZone">Finish zone</button>
 <button class="btn" id="cancelDraw">Cancel draw</button>
-<div id="editor"></div>
-</aside></main></div>
-<div id="view-weather" class="view"></div>
-<div id="view-water" class="view"></div>
-<div id="view-feed" class="view"></div>
-<div id="view-settings" class="view"></div>
-</div>
+<div id="editor"></div></aside></main></div>
+<div id="view-weather" class="view"></div><div id="view-water" class="view"></div><div id="view-feed" class="view"></div><div id="view-settings" class="view"></div></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="data.js"></script>
-<script src="map.js"></script>
-<script src="weather.js"></script>
+<script src="app.js"></script>
 </body></html>
